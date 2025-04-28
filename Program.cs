@@ -43,6 +43,18 @@ namespace crud
                         {
                             Console.WriteLine($"Name {nameToAdd} already exists in the list.");
                         }
+                        else if (nameToAdd == "0" || nameToAdd == "1" || nameToAdd == "2" || nameToAdd == "3" || nameToAdd == "4" || nameToAdd == "5" || nameToAdd == "6" || nameToAdd == "7" || nameToAdd == "8" || nameToAdd == "9")
+                        {
+                            Console.WriteLine("You can't add numbers as names.");
+                        }
+                        else if (nameToAdd.Any(char.IsDigit))
+                        {
+                            Console.WriteLine("You can't add numbers as names.");
+                        }
+                        else if (nameToAdd == name)
+                        {
+                            Console.WriteLine("You can't add your numbers as names.");
+                        }
                         else
                         {
                             names.Add(nameToAdd);
@@ -50,6 +62,11 @@ namespace crud
                         }
                         break;
                     case "2":
+                    Console.WriteLine("List of names:");
+                        foreach (string n in names)
+                        {
+                            Console.WriteLine(n);
+                        }
                         Console.WriteLine("Enter the name you wanna remove:");
                         string nameToRemove = Console.ReadLine();
                         if (string.IsNullOrWhiteSpace(nameToRemove))
