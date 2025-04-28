@@ -23,16 +23,17 @@ namespace crud
             string option;
             do
             {
-                Console.WriteLine("What is your will for this application?");
+                Console.WriteLine("\n\nWhat is your will for this application?");
                 Console.WriteLine("1. Add a name to the list.");
                 Console.WriteLine("2. Remove a name from the list.");
                 Console.WriteLine("3. Show the list of names.");
-                Console.WriteLine("4. Exit the application.");
+                Console.WriteLine("4. Exit the application.\n\n");
                 option = Console.ReadLine();
 
                 switch (option)
                 {
                     case "1":
+                        Console.Clear();
                         Console.WriteLine("Enter the name you wanna add:");
                         string nameToAdd = Console.ReadLine();
                         if (string.IsNullOrWhiteSpace(nameToAdd))
@@ -58,10 +59,11 @@ namespace crud
                         else
                         {
                             names.Add(nameToAdd);
-                            Console.WriteLine($"Name {nameToAdd} added to the list.");
+                            Console.WriteLine($"\n\nName {nameToAdd} added to the list.");
                         }
                         break;
                     case "2":
+                    Console.Clear();
                     Console.WriteLine("List of names:");
                         foreach (string n in names)
                         {
@@ -69,6 +71,7 @@ namespace crud
                         }
                         Console.WriteLine("Enter the name you wanna remove:");
                         string nameToRemove = Console.ReadLine();
+                        Console.Clear();
                         if (string.IsNullOrWhiteSpace(nameToRemove))
                         {
                             Console.WriteLine("Please enter a valid name.");
@@ -79,15 +82,16 @@ namespace crud
                         }
                         else if (!names.Contains(nameToRemove))
                         {
-                            Console.WriteLine($"Name {nameToRemove} not found in the list.");
+                            Console.WriteLine($"\n\nName {nameToRemove} not found in the list.");
                         }
                         else
                         {
                             names.Remove(nameToRemove);
-                            Console.WriteLine($"Name {nameToRemove} removed from the list.");
+                            Console.WriteLine($"\n\nName {nameToRemove} removed from the list.");
                         }
                         break;
                     case "3":
+                        Console.Clear();
                         Console.WriteLine("List of names:");
                         foreach (string n in names)
                         {
